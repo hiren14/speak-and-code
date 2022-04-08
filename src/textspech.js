@@ -3,14 +3,14 @@ import SpeechRecognition, {
   useSpeechRecognition
 } from "react-speech-recognition";
 import "../src/index.css";
-import './package/commandParser'
+
 const microPhoneIcon = "https://www.svgrepo.com/show/8387/microphone.svg";
-export  function Speechrecognition() {
-  
-  
+
+export  function Speechrecognition(props) {
   const { transcript, resetTranscript } = useSpeechRecognition({});
   const [isListening, setIsListening] = useState(false);
   const microphoneRef = useRef(null);
+
   if (!SpeechRecognition.browserSupportsSpeechRecognition()) {
     return (
       <div className="mircophone-container">
@@ -27,6 +27,10 @@ export  function Speechrecognition() {
   };
   const stopHandle = () => {
     setIsListening(false);
+
+    // will pass through all necessary steps and give output
+    props.addCodeHandler(transcript)
+    
     microphoneRef.current.classList.remove("listening");
     SpeechRecognition.stopListening();
   };
@@ -34,6 +38,7 @@ export  function Speechrecognition() {
     stopHandle();
     resetTranscript();
   };
+
   return (
     <div className="microphone-wrapper">
       <div className="mircophone-container">

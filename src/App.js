@@ -24,10 +24,12 @@ const App = () => {
     const addCodeHandler = (p_unfilteredCode) => {
         // spliting code
         const unfilteredCodeGroup = cmdParser.splitUnfilteredCode(p_unfilteredCode)
-
+        console.log("Unfiltered code: " + unfilteredCodeGroup)
+        
         // filtering code
         const filteredCodeGroup = cmdParser.filterCode(unfilteredCodeGroup)
-        console.log(filteredCodeGroup)
+        console.log("Filtered code: " + filteredCodeGroup)
+
         // generate syntax
         const pureCode = cmdParser.generateSyntax(filteredCodeGroup)
 

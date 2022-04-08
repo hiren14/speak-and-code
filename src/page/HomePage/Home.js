@@ -21,7 +21,7 @@ const Home = (props) => {
                     }
                 </div>
                 <div className='editor-container'>
-           <Speechrecognition />
+           <Speechrecognition addCodeHandler={props.addCodeHandler}/>
            </div>
 
                 <textarea placeholder='console' className='output-container'>
