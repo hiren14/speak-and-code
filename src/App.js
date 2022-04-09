@@ -1,8 +1,9 @@
-import './App.css';
-//import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition';
-
-// Hooks
 import { useState, useEffect } from 'react';
+import './App.css';
+//import SpeechRecognition, { useSpeechRecognition } from '/react-speech-recognition';
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import '../node_modules/bootstrap/dist/js/bootstrap.bundle.min';
+// Hooks
 
 // Pages
 import Welcome from './page/WelcomePage/Welcome';

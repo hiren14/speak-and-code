@@ -25,13 +25,13 @@ const Welcome = (props) => {
                     <option value='java'>Java</option>
                     <option value='python'>Python</option>
                 </select>
-
+                
                 <button onClick={submitHandler} className='font-raleway-medium'>Next</button>
             </div>
-
             <div className='content-2'>
                 <img src={res_1} alt={'res-1'}></img>
             </div>
+            
         </div>
     )
 }
